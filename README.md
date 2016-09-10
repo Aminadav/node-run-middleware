@@ -102,3 +102,6 @@ This is working, but it will not be nice, to be able to call to one middleware f
 			console.log(code,data)
 			process.exit()
 		})
+
+
+See example.js file for more info

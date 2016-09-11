@@ -16,7 +16,6 @@ New NodeJS Express module to direct call URL requests, for internal executing RE
 		console.log(data) // { user: '20', name: 'Moyshale' }
 	})
 
-## Description
 
 When developing Express NodeJS REST API's many times you need to call to one REST API's from another endpoint URL. For example, you have an API to get specific user by id
 

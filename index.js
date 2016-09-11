@@ -1,7 +1,9 @@
 var _=require('lodash')
 
 module.exports=function(app){
-	/* start - APP.runMiddleware*/	
+
+	if(app.runMiddleware) return /* Do not able to add as twice*/	
+		
 	app.runMiddleware=function(path,req,callback){	
 	    if(callback) callback=_.once(callback)
 	    var req=createReq(path,req)

@@ -4,20 +4,25 @@ New NodeJS Express module to simulate URL requests, for internal executing REST 
 
 When developing Express NodeJS REST API's many times you need to call to one REST API's from another endpoint URL. For example, you have an API to get specific user by id
 
-	app.get('/get-user:id',function(req,res){
+	app.get('/get-user/:id',function(req,res){
 		/*
 			DoSome MongoDB queries...()
 		*/
 		res.send(currentUser)
 	})
 
-Now your APP need the same API. What you usually do is moving the functions outside of the express midlleware
+Now your app need the call same API, from another API. What you usually do is moving the functions outside of the express midlleware
 
-	app.get('/remove-user:id',function(req,res){
+	app.get('/remove-user/:id',function(req,res){
 		/*
-			this API to work, need in the begining to get the user API
-			What should I do?
+			this API for work, need in the begining to get the user API
+			What should I do?			
 		*/
+		/*
+			getTheUser()
+			Remove the user()
+		*/
+
 	}
 
 The solution is:
@@ -26,8 +31,8 @@ The solution is:
 		// get ther user
 		callback(currentUser)
 	}
-	app.get('/get-user:id',function(req,res){
-		get_user(function(err,data){
+	app.get('/get-user/:id',function(req,res){
+		get_user(req.params.id,function(err,data){
 			if(err)...
 			else{
 				res.send(currentUser)		
@@ -35,8 +40,8 @@ The solution is:
 		})
 	})
 
-	app.get('/remove-user:id',function(req,res){
-		get_user(function(err,data){
+	app.get('/remove-user/:id',function(req,res){
+		get_user(req.params.id,function(err,data){
 			if(err)...
 			else{
 				removeUser()
@@ -84,7 +89,7 @@ This is working, but it will not be nice, to be able to call to one middleware f
 
 	Choose whatever you like MIT/GPL/GNU. I don't give you any warrany.
 
-## Support
+## Support & Contributions
 	
 	Pull requests, issues, and English proofreading are welcome.
 

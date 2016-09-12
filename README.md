@@ -3,6 +3,8 @@ New NodeJS Express module to direct call URL requests, for internal executing RE
 
 ## See this Example:
 
+[![Join the chat at https://gitter.im/node-run-middleware/Lobby](https://badges.gitter.im/node-run-middleware/Lobby.svg)](https://gitter.im/node-run-middleware/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 	var express=require('express')
 	var app=express()
 

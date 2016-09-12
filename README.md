@@ -131,7 +131,9 @@ This is working, but it will not be nice, to be able to call to one middleware f
 
 ## Changelog
 
-- v0.6.1 (12 Sep 2016) - Supports response.redirect
+- v0.6.1 (10 Sep 2016) - Supports response.redirect
+- v0.6.2 (12 Sep 2016) - Supports passing cookies and other variables to runMiddleware
+- v0.6.3 (14 Sep 2016) - Supports running middleware from others middleware, for automatically passing cookies and headers between middlewares.
 
 ## Examples
 

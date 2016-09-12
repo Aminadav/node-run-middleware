@@ -1,1 +1,1 @@
-{"name":"run-middleware","version":"0.6.1","description":"","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"author":"","license":"ISC","dependencies":{"lodash":""},"repository":{"type":"git","url":"git+https://github.com/aminag/node-run-middleware"}}
+{"name":"run-middleware","version":"0.6.3","description":"","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"author":"","license":"ISC","dependencies":{"lodash":""},"repository":{"type":"git","url":"git+https://github.com/aminag/node-run-middleware"}}

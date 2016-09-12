@@ -124,4 +124,10 @@ This is working, but it will not be nice, to be able to call to one middleware f
 		})
 
 
+## Changelog
+
+- v0.6.1 (12 Sep 2016) - Supports response.redirect
+
+## Examples
+
 See example.js file for more info

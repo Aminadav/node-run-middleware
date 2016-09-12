@@ -27,9 +27,30 @@ function createReq(path,options){
     return req
 }
 function createRes(callback){
-	var res={}	
+	var res={}
+	// res=_.extend(res,require('express/lib/response'));
+
+	var headers={}
 	var code=200;
-	res.setHeader=function(){    	
+	res.setHeader=res.set=res.header=(x,y)=>{    	
+		headers[x]=y
+		headers[x.toLowerCase()]=y
+		return res
+	}
+	// res.get=(x) => {
+	// 	return headers[x]
+	// }
+	res.redirect = function(_code,url){
+		if(!_.isNumber(_code)) {
+			code=301
+			url=_code
+		}
+		else{
+			code=_code
+		}
+		res.setHeader('Location',url)
+		res.end()
+		// callback(code,url)
 	}
 	res.status=function(number){
 		code=number
@@ -37,7 +58,7 @@ function createRes(callback){
 	}
 	res.end=res.send=res.write=function(data){
 	    if(callback)
-	        callback(code,data)
+	        callback(code,data,headers)
 	    // else if (!options.quiet){
 	    //     _res.send(data)
 	    // }

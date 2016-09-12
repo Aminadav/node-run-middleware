@@ -13,7 +13,6 @@ app.runMiddleware('/get-user/20',{},function(code,data){
 	console.log(data) // { user: '20', name: 'Moyshale' }
 })
 
-
 // Anoter test. Test Redirect */
 app.get('/defaultRedirectCode',function(req,res){
 	res.redirect("http://github.com")
@@ -31,3 +30,6 @@ app.runMiddleware('/customRedirectCode',{},function(code,data,headers){
 	console.log(code) // 301
 	console.log(headers.location) // http://github.com
 })
+/* For more examples, and question, please use the issues tab in GitHub
+	https://github.com/AminaG/node-run-middleware/issues
+*/

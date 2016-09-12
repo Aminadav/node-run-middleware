@@ -3,7 +3,7 @@ New NodeJS Express module to direct call URL requests, for internal executing RE
 
 #NodeJS run-middleware module
 
-[![npm](https://img.shields.io/npm/dt/run-middleware.svg?maxAge=2592000)]()
+[![npm](https://img.shields.io/npm/dt/run-middleware.svg?maxAge=2592000)](https://www.npmjs.com/package/run-middleware)
 [![npm version](https://badge.fury.io/js/run-middleware.svg)](https://badge.fury.io/js/run-middleware)
 [![Join the chat at https://gitter.im/node-run-middleware/Lobby](https://badges.gitter.im/node-run-middleware/Lobby.svg)](https://gitter.im/node-run-middleware/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 

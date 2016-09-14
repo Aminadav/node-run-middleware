@@ -37,7 +37,8 @@ Now your want to get the user details from your code. What should you do?
 
 ## Support & Contributions
 	
-Pull requests, issues, and English proofreading are welcome.
+ - Pull requests, issues, and English proofreading are welcome in Github.
+ - Question & support in StackOverflow using `run-middleware`tag.
 
 ---
 

@@ -1,3 +1,18 @@
+<!-- MarkdownTOC -->
+
+- NodeJS run-middleware
+	- Why?
+	- Installtion
+	- Support & Contributions
+	- Change request paramaters
+	- Auto pass cookies
+	- Redirecting
+	- Changelog
+	- Examples
+	- License
+
+<!-- /MarkdownTOC -->
+
 NodeJS module to execute your Express endpoints (middlewares) from your code. This module will let you laucnch manually
 all your middleware. It is simulate a client calling to your rest API's. It is not using a network connection (Your server do not even needs to listen to a port)
 

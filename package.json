@@ -1,18 +1,1 @@
-{
-  "name": "run-middleware",
-  "version": "0.6.3",
-  "description": "NodeJS module to execute your Express endpoints (middlewares) from your code. This module will let you laucnch manually all your middleware. It is simulate a client calling to your rest API's. It is not using a network connection (Your server do not even needs to listen to a port)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "lodash": ""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aminag/node-run-middleware"
-  }
-}
+{"name":"run-middleware","version":"0.6.5","description":"NodeJS module to execute your Express endpoints (middlewares) from your code. This module will let you laucnch manually all your middleware. It is simulate a client calling to your rest API's. It is not using a network connections","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"author":"","license":"ISC","dependencies":{"lodash":""},"repository":{"type":"git","url":"git+https://github.com/aminag/node-run-middleware"}}

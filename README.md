@@ -22,6 +22,7 @@ all your middleware. It is simulate a client calling to your rest API's. It is n
 [![npm](https://img.shields.io/npm/dt/run-middleware.svg?maxAge=2592000)](https://www.npmjs.com/package/run-middleware)
 [![npm version](https://badge.fury.io/js/run-middleware.svg)](https://badge.fury.io/js/run-middleware)
 [![Join the chat at https://gitter.im/node-run-middleware/Lobby](https://badges.gitter.im/node-run-middleware/Lobby.svg)](https://gitter.im/node-run-middleware/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/AminaG/node-run-middleware.svg?branch=master)](https://travis-ci.org/AminaG/node-run-middleware)
 
 ## Why?
 

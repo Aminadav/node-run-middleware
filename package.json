@@ -4,7 +4,7 @@
   "description": "NodeJS module to execute your Express endpoints (middlewares) from your code. This module will let you laucnch manually all your middleware. It is simulate a client calling to your rest API's. It is not using a network connections",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 2"
   },
   "author": "",
   "license": "ISC",

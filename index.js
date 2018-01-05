@@ -60,7 +60,9 @@ function createReq(path,options){
     return req
 }
 function createRes(callback){
-	var res={}
+	var res={
+		_removedHeader: {}
+	}
 	// res=_.extend(res,require('express/lib/response'));
 
 	var headers={}

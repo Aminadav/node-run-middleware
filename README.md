@@ -1,8 +1,13 @@
-<!-- MarkdownTOC -->
-
-* NodeJS run-middleware - Why? - Installtion - Support & Contributions - Change request paramaters - Auto pass cookies - Redirecting - Changelog - Examples - License
-
-<!-- /MarkdownTOC -->
+* NodeJS run-middleware
+* Why?
+* Installation
+* Support & Contributions
+* Change request paramaters
+* Auto pass cookies
+* Redirecting
+* Changelog
+* Examples
+* License
 
 NodeJS module to execute your Express endpoints (middlewares) from your code. This module will let you manually launch all your middleware. It is simulating a client calling your rest APIs, without using a network connection (your server does not even need to listen on a port).
 
@@ -11,7 +16,7 @@ NodeJS module to execute your Express endpoints (middlewares) from your code. Th
 [![npm](https://img.shields.io/npm/dt/run-middleware.svg?maxAge=2592000)](https://www.npmjs.com/package/run-middleware)
 [![npm version](https://badge.fury.io/js/run-middleware.svg)](https://badge.fury.io/js/run-middleware)
 [![Join the chat at https://gitter.im/node-run-middleware/Lobby](https://badges.gitter.im/node-run-middleware/Lobby.svg)](https://gitter.im/node-run-middleware/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](https://travis-ci.org/AminaG/node-run-middleware.svg?branch=master)](https://travis-ci.org/AminaG/node-run-middleware)
+[![Build Status](https://travis-ci.org/aminadav/node-run-middleware.svg?branch=master)](https://travis-ci.org/aminadav/node-run-middleware)
 
 ## Why?
 
@@ -31,7 +36,7 @@ Now you want to get the user details from your code. What should you do?
 
 ---
 
-## Installtion
+## Installation
 
     npm i -S run-middleware
 
@@ -88,7 +93,7 @@ If the middleware you execute will redirect, you will be notified about it, by r
 
 ## Examples
 
-See the tests file for more info
+See the tests
 
 ## License
 

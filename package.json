@@ -1,10 +1,11 @@
 {
   "name": "run-middleware",
   "version": "0.6.6",
-  "description": "NodeJS module to execute your Express endpoints (middlewares) from your code. This module will let you laucnch manually all your middleware. It is simulate a client calling to your rest API's. It is not using a network connections",
+  "description":
+    "NodeJS module to execute your Express endpoints (middlewares) from your code. This module will let you laucnch manually all your middleware. It is simulate a client calling to your rest API's. It is not using a network connections",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +15,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aminag/node-run-middleware"
+  },
+  "devDependencies": {
+    "express": "^4.16.3",
+    "jest": "^23.0.1"
   }
 }

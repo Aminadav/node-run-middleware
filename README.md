@@ -1,20 +1,10 @@
 <!-- MarkdownTOC -->
 
-- NodeJS run-middleware
-	- Why?
-	- Installtion
-	- Support & Contributions
-	- Change request paramaters
-	- Auto pass cookies
-	- Redirecting
-	- Changelog
-	- Examples
-	- License
+* NodeJS run-middleware - Why? - Installtion - Support & Contributions - Change request paramaters - Auto pass cookies - Redirecting - Changelog - Examples - License
 
 <!-- /MarkdownTOC -->
 
 NodeJS module to execute your Express endpoints (middlewares) from your code. This module will let you manually launch all your middleware. It is simulating a client calling your rest APIs, without using a network connection (your server does not even need to listen on a port).
-
 
 #NodeJS run-middleware
 
@@ -27,33 +17,32 @@ NodeJS module to execute your Express endpoints (middlewares) from your code. Th
 
 Many times, your server and your client, need to execute the same functions. For example here is an endpoint to get user details:
 
-	app.get('/get-user/:id',function(req,res){
-		mysql.query('select * from users where id=?',[req.params.id],function(err,rows){
-			res.send({user:rows[0]})
-		})
-	})	
+    app.get('/get-user/:id',function(req,res){
+    	mysql.query('select * from users where id=?',[req.params.id],function(err,rows){
+    		res.send({user:rows[0]})
+    	})
+    })
 
 Now you want to get the user details from your code. What should you do?
 
-	app.runMiddleware('/get-user/20',function(code,body,headers){
-		console.log('User Details:',body)
-	})
+    app.runMiddleware('/get-user/20',function(code,body,headers){
+    	console.log('User Details:',body)
+    })
 
 ---
 
 ## Installtion
 
-	npm i -S run-middleware
+    npm i -S run-middleware
 
-	var express=require('express')	
-	var app=express();
-	require('run-middleware')(app)
-
+    var express=require('express')
+    var app=express();
+    require('run-middleware')(app)
 
 ## Support & Contributions
-	
- - Pull requests, issues, and English proofreading are welcome on Github.
- - Question & support on StackOverflow using `run-middleware`tag.
+
+* Pull requests, issues, and English proofreading are welcome on Github.
+* Question & support on StackOverflow using `run-middleware`tag.
 
 ---
 
@@ -61,44 +50,45 @@ Now you want to get the user details from your code. What should you do?
 
 As options you can pass the `query`, `body`, `method`, `cookies` parameters.
 
-	app.runMiddleware('/handler',{
-			method:'post',
-			query:{token:'tk-12345'},
-			body:{"action":"list","path":"/"}
-		},function(code,data){
-			console.log(code,data)
-			process.exit()
-		})
+    app.runMiddleware('/handler',{
+    		method:'post',
+    		query:{token:'tk-12345'},
+    		body:{"action":"list","path":"/"}
+    	},function(code,data){
+    		console.log(code,data)
+    		process.exit()
+    	})
 
 ## Auto pass cookies
 
 When you can runMiddleware from another middleware, you can autopass all the parameters of the current middleware, by using the express `request` object.
 
-	app.get('/middleware1',function(req,res){
-		// We use res.runMiddleware instead of app.runMiddleware. All the cookies & other data (like socket.io session) will be pass to the second middleware
-		res.runMidleware(...)   
-	})
+    app.get('/middleware1',function(req,res){
+    	// We use res.runMiddleware instead of app.runMiddleware. All the cookies & other data (like socket.io session) will be pass to the second middleware
+    	res.runMidleware(...)
+    })
 
 ## Redirecting
 
 If the middleware you execute will redirect, you will be notified about it, by reading the `code` and the `headers.location`
 
-	app.runMiddleware('/this-middleware-will-response-as-redirect',function(code,body,headers){
-		if(code==301 || code=302) {// Redirect HTTP codes
-			console.log('Redirect to:',headers.location)
-		}
-	})
+    app.runMiddleware('/this-middleware-will-response-as-redirect',function(code,body,headers){
+    	if(code==301 || code=302) {// Redirect HTTP codes
+    		console.log('Redirect to:',headers.location)
+    	}
+    })
 
 ## Changelog
 
-- v0.6.1 (9 Sep 2016) - Supports response.redirect
-- v0.6.2 (10 Sep 2016) - Supports passing cookies and other variables to runMiddleware
-- v0.6.3 (11 Sep 2016) - Supports running middleware from others middleware, for automatically passing cookies and headers between middlewares.
-- v0.6.4 (13 Sep 2016) - Better documentation and examples
+* v1.0.0 (25 June 2018) -
+* v0.6.1 (9 Sep 2016) - Supports response.redirect
+* v0.6.2 (10 Sep 2016) - Supports passing cookies and other variables to runMiddleware
+* v0.6.3 (11 Sep 2016) - Supports running middleware from others middleware, for automatically passing cookies and headers between middlewares.
+* v0.6.4 (13 Sep 2016) - Better documentation and examples
 
 ## Examples
 
-See example.js file for more info
+See the tests file for more info
 
 ## License
 

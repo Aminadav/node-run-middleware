@@ -13,8 +13,7 @@
 
 <!-- /MarkdownTOC -->
 
-NodeJS module to execute your Express endpoints (middlewares) from your code. This module will let you laucnch manually
-all your middleware. It is simulate a client calling to your rest API's. It is not using a network connection (Your server do not even needs to listen to a port)
+NodeJS module to execute your Express endpoints (middlewares) from your code. This module will let you manually launch all your middleware. It is simulating a client calling your rest APIs, without using a network connection (your server does not even need to listen on a port).
 
 
 #NodeJS run-middleware
@@ -26,7 +25,7 @@ all your middleware. It is simulate a client calling to your rest API's. It is n
 
 ## Why?
 
-Many times, your server, and your client, needs to execute the same functions. For example here is an endpoint to get user details:
+Many times, your server and your client, need to execute the same functions. For example here is an endpoint to get user details:
 
 	app.get('/get-user/:id',function(req,res){
 		mysql.query('select * from users where id=?',[req.params.id],function(err,rows){
@@ -34,7 +33,7 @@ Many times, your server, and your client, needs to execute the same functions. F
 		})
 	})	
 
-Now your want to get the user details from your code. What should you do?
+Now you want to get the user details from your code. What should you do?
 
 	app.runMiddleware('/get-user/20',function(code,body,headers){
 		console.log('User Details:',body)
@@ -53,14 +52,14 @@ Now your want to get the user details from your code. What should you do?
 
 ## Support & Contributions
 	
- - Pull requests, issues, and English proofreading are welcome in Github.
- - Question & support in StackOverflow using `run-middleware`tag.
+ - Pull requests, issues, and English proofreading are welcome on Github.
+ - Question & support on StackOverflow using `run-middleware`tag.
 
 ---
 
 ## Change request paramaters
 
-You can passing query string, body, cookies, and change the method.
+As options you can pass the `query`, `body`, `method`, `cookies` parameters.
 
 	app.runMiddleware('/handler',{
 			method:'post',
@@ -76,7 +75,7 @@ You can passing query string, body, cookies, and change the method.
 When you can runMiddleware from another middleware, you can autopass all the parameters of the current middleware, by using the express `request` object.
 
 	app.get('/middleware1',function(req,res){
-		// We use res.runMiddleware instead of app.runMiddleware. All the cookies & other data (like socket.io session) will be pass to the second middle ware
+		// We use res.runMiddleware instead of app.runMiddleware. All the cookies & other data (like socket.io session) will be pass to the second middleware
 		res.runMidleware(...)   
 	})
 

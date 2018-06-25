@@ -1,8 +1,13 @@
-<!-- MarkdownTOC -->
-
-* NodeJS run-middleware - Why? - Installtion - Support & Contributions - Change request paramaters - Auto pass cookies - Redirecting - Changelog - Examples - License
-
-<!-- /MarkdownTOC -->
+* NodeJS run-middleware
+* Why?
+* Installation
+* Support & Contributions
+* Change request paramaters
+* Auto pass cookies
+* Redirecting
+* Changelog
+* Examples
+* License
 
 NodeJS module to execute your Express endpoints (middlewares) from your code. This module will let you manually launch all your middleware. It is simulating a client calling your rest APIs, without using a network connection (your server does not even need to listen on a port).
 
@@ -31,7 +36,7 @@ Now you want to get the user details from your code. What should you do?
 
 ---
 
-## Installtion
+## Installation
 
     npm i -S run-middleware
 
@@ -88,7 +93,7 @@ If the middleware you execute will redirect, you will be notified about it, by r
 
 ## Examples
 
-See the tests file for more info
+See the tests
 
 ## License
 

@@ -67,7 +67,17 @@ function createRes(callback) {
 
   var headers = {};
   var code = 200;
-  res.setHeader = res.set = res.header = (x, y) => {
+  res.set = res.header = (x, y) => {
+    if (arguments.length === 2) {
+      res.setHeader(x, y);
+    } else {
+      for (var key in x) {
+        res.setHeader(key, x[key]);
+      }
+    }
+    return res;
+  }
+  res.setHeader = (x, y) => {
     headers[x] = y;
     headers[x.toLowerCase()] = y;
     return res;

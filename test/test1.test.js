@@ -82,3 +82,24 @@ test("test passing cookies", done => {
     }
   );
 });
+
+test("test res.set", done => {
+  var app = express();
+  AddRunMiddleware(app);
+
+  app.get("/stuff", function(req, res) {
+    res.set({ 'cache-control': 'free for all' }).send();
+  });
+  app.runMiddleware(
+    "/stuff",
+    {},
+    function(code, data, headers) {
+      try {
+        expect(headers['cache-control']).toEqual("free for all");
+        done();
+      } catch (err) {
+        done(err);
+      }
+    }
+  );
+});

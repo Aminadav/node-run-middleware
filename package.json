@@ -1,6 +1,6 @@
 {
   "name": "run-middleware",
-  "version": "0.6.6",
+  "version": "0.9.8",
   "description":
     "NodeJS module to execute your Express endpoints (middlewares) from your code. This module will let you laucnch manually all your middleware. It is simulate a client calling to your rest API's. It is not using a network connections",
   "main": "index.js",

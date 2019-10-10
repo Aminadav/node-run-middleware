@@ -74,7 +74,7 @@ When you `runMiddleware` from another location, you don't have to pass all the p
 
 ```js
 app.get('/middleware1', (req, res) => {
-  res.runMidleware( /* ... */ );
+  req.runMiddleware( /* ... */ );
 })
 ```
 

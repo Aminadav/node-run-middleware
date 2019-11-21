@@ -1,6 +1,6 @@
-var _ = require("lodash");
-
-var request = require("express/lib/request");
+const _ = require("lodash");
+const util = require("util");
+const request = require("express/lib/request");
 
 module.exports = function(app) {
   app.use((req, res, next) => {
@@ -39,6 +39,26 @@ module.exports = function(app) {
     app(new_req, new_res);
   };
 
+  app.runMiddleware[util.promisify.custom] = (path, options) => {
+    return new Promise((resolve, reject) => {
+      app.runMiddleware(path, options, function(code, data, headers) {
+        let payload = { code: code, data: data, headers: headers };
+        resolve(payload);
+      });
+    });
+  };
+
+  app.runMiddlewarePromise = util.promisify(app.runMiddleware);
+
+  app.asyncRunMiddleware = async (path, options) => {
+    try {
+      return await app.runMiddlewarePromise(path, options);
+    } catch (e) {
+      console.error("NOT IMPLEMENTED: ", e);
+      return false;
+    }
+  }
+  
   /* end - APP.runMiddleware*/
 };
 

@@ -106,7 +106,6 @@ function createRes(callback) {
     // callback(code,url)
   };
   res.status = res.sendStatus = function(number) {
-    console.log('[runMiddleware] res.status', number, res);
     code = number;
     return res;
   };

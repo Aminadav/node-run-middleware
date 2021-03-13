@@ -62,6 +62,15 @@ function createReq(path, options) {
 function createRes(callback) {
   var res = {
     _removedHeader: {},
+    _statusCode: 200,
+    statusMessage: 'OK',
+    get statusCode() {
+      return this._statusCode
+    },
+    set statusCode(status) {
+      this._statusCode = status
+      this.status(status)
+    }
   };
   // res=_.extend(res,require('express/lib/response'));
 
@@ -96,7 +105,7 @@ function createRes(callback) {
     res.end();
     // callback(code,url)
   };
-  res.status = function(number) {
+  res.status = res.sendStatus = function(number) {
     code = number;
     return res;
   };

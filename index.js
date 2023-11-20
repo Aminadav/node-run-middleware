@@ -116,5 +116,11 @@ function createRes(callback) {
     //     _res.send(data)
     // }
   };
+  res.getHeader = function(name) {
+    if ( 'undefined' !== typeof headers[name] ) {
+      return headers[name];
+    }
+    return null; 
+  };
   return res;
 }

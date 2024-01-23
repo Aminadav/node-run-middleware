@@ -48,7 +48,6 @@ function createReq(path, options) {
     {
       method: "GET",
       host: "",
-      cookies: {},
       query: {},
       url: path,
       headers: {},
@@ -91,7 +90,12 @@ function createRes(callback) {
     headers[x.toLowerCase()] = y;
     return res;
   };
-  res.getHeader = (x) => headers[x];
+  res.getHeader = function(name) {
+    if ( 'undefined' !== typeof headers[name] ) {
+      return headers[name];
+    }
+    return null; 
+  };
   // res.get=(x) => {
   // 	return headers[x]
   // }

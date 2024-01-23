@@ -48,7 +48,6 @@ function createReq(path, options) {
     {
       method: "GET",
       host: "",
-      cookies: {},
       query: {},
       url: path,
       headers: {},
